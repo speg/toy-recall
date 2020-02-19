@@ -5,8 +5,8 @@ import useDebug from './hooks/debug';
 
 // components
 import Header from './components/header';
-import SearchControl from './components/search';
-import SearchResults from './components/results';
+import Calendar from './components/calendar';
+import ReservationForm from './components/form';
 
 // context
 import { DispatchContext } from './contexts';
@@ -29,9 +29,11 @@ function App() {
     <div className="app">
       {state.network === false ? <small>Network Activity Failed</small> : null}
       <DispatchContext.Provider value={dispatch}>
-          <Header products={state.products} />
-          <SearchControl />
-          <SearchResults results={state.results} products={state.products} />
+          <Header groups={state.groups} />
+          <div className="flex">
+            <Calendar />
+            <ReservationForm results={state.results} groups={state.groups} />
+          </div>
       </DispatchContext.Provider>
     </div>
   );

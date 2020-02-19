@@ -10,7 +10,7 @@ function reducer(state, action) {
 			state.results = action.value;
 			break;
 		case 'product-toggle':
-			state.products = state.products.map(p => {
+			state.groups = state.groups.map(p => {
 				if (p.name === action.value) {
 					p.selected = !p.selected;
 				}
@@ -31,11 +31,8 @@ function reducer(state, action) {
 const initState = {
 	searchQuery: null,
 	network: null,
-	products: [
-			{name: 'metar', selected: true},
-			{name: 'notam'},
-			{name: 'taf', selected: true},
-			{name: 'pirep'},
+	groups: [
+			{name: 'St-Hubert', selected: true},
 		]
 };
 
