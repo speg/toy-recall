@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 
 function formatNotam(text) {
 	// NOTAMs are json.. raw/english/french
@@ -37,8 +37,6 @@ function SearchResults({results, products}) {
 		return null;
 	}
 
-	
-
 	const active = products.reduce((acc, current) => {
 		acc[current.name] = current.selected;
 		return acc;
@@ -48,7 +46,7 @@ function SearchResults({results, products}) {
 	return <>
 		<ResultInfo {...results.meta} filtered={filtered.length} />
 		<ul className="search-results">
-			{filtered.map(d => <li><Result {...d} /></li>)}
+			{filtered.map((d, i) => <li key={i}><Result {...d} /></li>)}
 		</ul>
 	</>
 }

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import useDispatch from '../hooks/dispatch';
 
 const type = 'prepare-search';

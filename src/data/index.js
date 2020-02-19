@@ -1,8 +1,4 @@
 
-function executeSearch(query) {
-	// do a search. 
-}
-
 function reducer(state, action) {
 	console.log('Debugging action', action);
 	switch (action.type) {
