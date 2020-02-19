@@ -1,0 +1,7 @@
+form {
+	padding: 6px;
+}
+
+form > input {
+	margin-bottom: 6px;
+}
