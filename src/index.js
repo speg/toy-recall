@@ -4,7 +4,13 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+if (window.fetch) {
+	ReactDOM.render(<App />, document.getElementById('root'));
+} else {
+	const p = document.createElement('p');
+	p.innerText = 'Your browser is not supported.';
+	document.body.appendChild(p);
+}
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
